@@ -1,0 +1,22 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+
+<hibernate-mapping>
+<class name="com.ex.Payment" table="payment">
+<id name="pid" column="pid"></id>
+<property name="amount" column="amount"></property>
+
+
+<union-subclass name="com.ex.CreditCard">
+<property name="ccType" column="cctype"></property>
+</union-subclass>
+
+<union-subclass name="com.ex.ChequeType">
+<property name="cqType" column="cqtype"></property>
+</union-subclass>
+
+</class>
+
+</hibernate-mapping>
